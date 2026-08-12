@@ -50,7 +50,7 @@ export function getFromAddress(): string {
 }
 
 export function getAdminEmail(): string {
-  return (process.env.ADMIN_EMAIL || "eajazahmed@gmail.com").trim();
+  return (process.env.ADMIN_EMAIL || "eajazahmedm@gmail.com").trim();
 }
 
 /**

@@ -66,7 +66,7 @@ export const personalDetails = {
   heroSubheading: "I build intelligent systems and digital products.",
   heroDescription:
     "Computer Science Engineering student specializing in Artificial Intelligence & Data Science, focused on building AI-powered applications, scalable software, data-driven systems, and intelligent developer experiences.",
-  email: "eajazahmed@gmail.com",
+  email: "eajazahmedm@gmail.com",
   github: "https://github.com/2310030167",
   linkedin: "https://www.linkedin.com/in/mohammad-eajaz-ahmed-071794288/",
   resumeUrl: "/resume.pdf",
