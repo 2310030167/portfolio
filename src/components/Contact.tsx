@@ -115,14 +115,6 @@ export const Contact = () => {
           </button>
 
           <a
-            href={`mailto:${personalDetails.email}`}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#161B2F]/60 hover:bg-[#242F49] text-zinc-200 hover:text-white border border-[#FFA586]/20 hover:border-[#FFA586]/50 text-xs font-mono transition-all"
-          >
-            <Mail className="w-3.5 h-3.5 text-[#FFA586]" />
-            <span>Email Me</span>
-          </a>
-
-          <a
             href={personalDetails.linkedin}
             target="_blank"
             rel="noopener noreferrer"
