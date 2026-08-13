@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
     const baseUrl =
       process.env.NEXT_PUBLIC_APP_URL ||
       req.nextUrl.origin ||
-      "http://localhost:3000";
+      "https://portfolio-xi-silk-76.vercel.app/";
 
     const approveUrl = `${baseUrl}/api/contact/action?token=${approveToken}&action=approve`;
     const rejectUrl = `${baseUrl}/api/contact/action?token=${rejectToken}&action=reject`;

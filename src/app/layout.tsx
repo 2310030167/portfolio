@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://eajaz.dev",
+    url: "https://devilslab.co.in/",
     title: "Mohammed Eajaz Ahmed — AI Engineer & Software Developer",
     description:
       "Computer Science Engineering student specializing in Artificial Intelligence & Data Science. Explore selected work, machine learning systems, and enterprise engineering projects.",

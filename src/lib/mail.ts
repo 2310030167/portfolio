@@ -46,7 +46,7 @@ export function getFromAddress(): string {
     return `"Mohammed Eajaz Ahmed" <${user}>`;
   }
 
-  return '"Mohammed Eajaz Ahmed" <no-reply@eajaz.dev>';
+  return '"Mohammed Eajaz Ahmed" <no-reply@eajazahmedm@gmail.com>';
 }
 
 export function getAdminEmail(): string {
