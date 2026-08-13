@@ -39,6 +39,15 @@ export const Footer = () => {
           </a>
 
           <a
+            href={personalDetails.companyUrl || "https://devilslab.co.in/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#FFA586] text-zinc-300 transition-colors"
+          >
+            DEVILSLAB
+          </a>
+
+          <a
             href="#author"
             className="hover:text-[#FFA586] text-zinc-200 font-semibold transition-colors"
           >
@@ -49,6 +58,7 @@ export const Footer = () => {
             © 2026
           </span>
         </div>
+
 
       </div>
     </footer>

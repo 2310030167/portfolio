@@ -36,12 +36,13 @@ export const metadata: Metadata = {
     "Full-Stack Developer",
     "Portfolio",
   ],
+  metadataBase: new URL("https://portfolio-xi-silk-76.vercel.app/"),
   authors: [{ name: "Mohammed Eajaz Ahmed" }],
   creator: "Mohammed Eajaz Ahmed",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://devilslab.co.in/",
+    url: "https://portfolio-xi-silk-76.vercel.app/",
     title: "Mohammed Eajaz Ahmed — AI Engineer & Software Developer",
     description:
       "Computer Science Engineering student specializing in Artificial Intelligence & Data Science. Explore selected work, machine learning systems, and enterprise engineering projects.",
@@ -57,6 +58,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
 };
+
 
 export const viewport: Viewport = {
   themeColor: "#070708",

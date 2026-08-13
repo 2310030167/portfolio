@@ -1,9 +1,8 @@
 /**
- * Base email layout wrapper matching the portfolio dark editorial design.
+ * Base email layout wrapper optimized for high inbox deliverability.
  */
 export function wrapEmailLayout({
   title,
-  preheader,
   content,
 }: {
   title: string;
@@ -16,78 +15,51 @@ export function wrapEmailLayout({
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #070708;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      color: #f4f4f6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .wrapper {
-      width: 100%;
-      background-color: #070708;
-      padding: 40px 16px;
-    }
-    .container {
-      max-width: 580px;
-      margin: 0 auto;
-      background-color: #0e0e12;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-    .header {
-      padding: 28px 32px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      background-color: #111116;
-    }
-    .brand {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #ffffff;
-      text-transform: uppercase;
-    }
-    .eyebrow {
-      font-size: 10px;
-      color: #9494a0;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-    .body {
-      padding: 32px;
-    }
-    .footer {
-      padding: 24px 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      background-color: #09090c;
-      font-size: 11px;
-      color: #71717a;
-      text-align: center;
-      line-height: 1.6;
-    }
-  </style>
 </head>
-<body>
-  ${preheader ? `<div style="display:none;font-size:1px;color:#070708;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">${preheader}</div>` : ""}
-  <div class="wrapper">
-    <div class="container">
-      <div class="header">
-        <div class="brand">Mohammed Eajaz Ahmed</div>
-        <div class="eyebrow">AI • Software • Data</div>
-      </div>
-      <div class="body">
-        ${content}
-      </div>
-      <div class="footer">
-        © ${new Date().getFullYear()} Mohammed Eajaz Ahmed • Personal Portfolio<br>
-        This email was sent via the portfolio automated messaging engine.
-      </div>
-    </div>
-  </div>
+<body style="margin: 0; padding: 0; background-color: #0b0c10; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f4f4f6; -webkit-font-smoothing: antialiased;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0b0c10; padding: 32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 580px; background-color: #12131a; border: 1px solid #272732; border-radius: 16px; overflow: hidden; text-align: left;">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 24px 28px; border-bottom: 1px solid #23242e; background-color: #161722;">
+              <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.5px; color: #ffffff; text-transform: uppercase;">
+                Mohammed Eajaz Ahmed
+              </div>
+              <div style="font-size: 11px; color: #FFA586; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; font-weight: 600;">
+                AI • Software • Data
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Body Content -->
+          <tr>
+            <td style="padding: 28px;">
+              ${content}
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 28px; border-top: 1px solid #23242e; background-color: #0e0f15; font-size: 11px; color: #828290; text-align: center; line-height: 1.6;">
+              <div>© ${new Date().getFullYear()} Mohammed Eajaz Ahmed • AI &amp; Software Engineer</div>
+              <div style="margin-top: 6px;">
+                <a href="https://portfolio-xi-silk-76.vercel.app/" style="color: #FFA586; text-decoration: none;">Portfolio</a>
+                &nbsp;•&nbsp;
+                <a href="https://devilslab.co.in/" style="color: #FFA586; text-decoration: none;">DevilsLab</a>
+                &nbsp;•&nbsp;
+                <a href="mailto:eajazahmedm@gmail.com" style="color: #FFA586; text-decoration: none;">eajazahmedm@gmail.com</a>
+              </div>
+              <div style="margin-top: 8px; font-size: 10px; color: #5a5a66;">
+                You received this message in response to an inquiry submitted through the portfolio contact form.
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>`;
 }
@@ -103,3 +75,4 @@ export function escapeHtml(str: string): string {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+

@@ -30,27 +30,20 @@ function getTransporter(): nodemailer.Transporter {
 }
 
 export function getFromAddress(): string {
-  const user = (process.env.SMTP_USER || "").trim();
+  const user = (process.env.SMTP_USER || "eajazahmedm@gmail.com").trim();
   const from = process.env.SMTP_FROM?.trim();
 
-  // If using a Gmail account, From header must match authenticated Gmail account to prevent spam dropping
-  if (user.endsWith("@gmail.com")) {
-    return `"Mohammed Eajaz Ahmed" <${user}>`;
-  }
-
+  // If a custom from is explicitly configured
   if (from && from.length > 0) {
     return from;
   }
 
-  if (user.length > 0) {
-    return `"Mohammed Eajaz Ahmed" <${user}>`;
-  }
-
-  return '"Mohammed Eajaz Ahmed" <no-reply@eajazahmedm@gmail.com>';
+  // Personal Gmail authentication requires matching sender to prevent spam quarantine
+  return `"Mohammed Eajaz Ahmed" <${user}>`;
 }
 
 export function getAdminEmail(): string {
-  return (process.env.ADMIN_EMAIL || "eajazahmedm@gmail.com").trim();
+  return (process.env.ADMIN_EMAIL || process.env.SMTP_USER || "eajazahmedm@gmail.com").trim();
 }
 
 /**
@@ -93,8 +86,8 @@ Reject: ${params.rejectUrl}
     const info = await transport.sendMail({
       from,
       to,
-      replyTo: params.email,
-      subject: `New Portfolio Contact — ${params.subject}`,
+      replyTo: `"${params.name}" <${params.email}>`,
+      subject: `New Portfolio Contact: ${params.subject}`,
       text,
       html,
       headers: {
@@ -125,16 +118,21 @@ export async function sendVisitorApproval(params: {
     const transport = getTransporter();
     const html = renderApprovalEmail(params);
     const from = getFromAddress();
+    const adminEmail = getAdminEmail();
 
     const text = `Hello ${params.name},
 
 Thank you for reaching out through my portfolio.
 
-I've reviewed your message and would be happy to continue the conversation. I will follow up with you with more details shortly.
+I have received and reviewed your message regarding "${params.subject}". I would be glad to discuss this further with you and will follow up with additional details shortly.
+
+If you have any extra context or files you would like to share in the meantime, feel free to reply directly to this email.
 
 Best regards,
 Mohammed Eajaz Ahmed
-AI • SOFTWARE • DATA
+AI • Software • Data
+Portfolio: https://portfolio-xi-silk-76.vercel.app/
+Company: https://devilslab.co.in/
 `;
 
     console.log(`[SMTP] Sending visitor approval from: ${from} -> to: ${params.email}`);
@@ -142,9 +140,13 @@ AI • SOFTWARE • DATA
     const info = await transport.sendMail({
       from,
       to: params.email,
-      subject: `Re: ${params.subject}`,
+      replyTo: `"Mohammed Eajaz Ahmed" <${adminEmail}>`,
+      subject: `Mohammed Eajaz Ahmed — Regarding: ${params.subject}`,
       text,
       html,
+      headers: {
+        "X-Entity-Ref-ID": `approval-${Date.now()}`,
+      },
     });
 
     console.log("[SMTP] Visitor approval email sent successfully. MessageId:", info.messageId);
@@ -168,18 +170,21 @@ export async function sendVisitorRejection(params: {
     const transport = getTransporter();
     const html = renderRejectionEmail(params);
     const from = getFromAddress();
+    const adminEmail = getAdminEmail();
 
     const text = `Hello ${params.name},
 
 Thank you for reaching out and for your interest.
 
-I've reviewed your message, but unfortunately I am unable to take this request forward at the moment due to current commitments and project bandwidth.
+I have reviewed your message regarding "${params.subject}". Unfortunately, I am unable to take this request forward at the moment due to current commitments and project bandwidth.
 
 I truly appreciate you taking the time to connect, and I wish you all the best.
 
 Best regards,
 Mohammed Eajaz Ahmed
-AI • SOFTWARE • DATA
+AI • Software • Data
+Portfolio: https://portfolio-xi-silk-76.vercel.app/
+Company: https://devilslab.co.in/
 `;
 
     console.log(`[SMTP] Sending visitor rejection from: ${from} -> to: ${params.email}`);
@@ -187,9 +192,13 @@ AI • SOFTWARE • DATA
     const info = await transport.sendMail({
       from,
       to: params.email,
-      subject: `Re: ${params.subject}`,
+      replyTo: `"Mohammed Eajaz Ahmed" <${adminEmail}>`,
+      subject: `Mohammed Eajaz Ahmed — Regarding: ${params.subject}`,
       text,
       html,
+      headers: {
+        "X-Entity-Ref-ID": `rejection-${Date.now()}`,
+      },
     });
 
     console.log("[SMTP] Visitor rejection email sent successfully. MessageId:", info.messageId);
@@ -200,3 +209,4 @@ AI • SOFTWARE • DATA
     return { success: false, error: message };
   }
 }
+
