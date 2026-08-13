@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { personalDetails } from "@/data/portfolio";
-import { Mail, Github, Linkedin, Copy, Check, Send, AlertCircle, CheckCircle2, Loader2, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Copy, Check, Send, AlertCircle, CheckCircle2, Loader2, ArrowUpRight } from "lucide-react";
 
 export const Contact = () => {
   const [copied, setCopied] = useState(false);
