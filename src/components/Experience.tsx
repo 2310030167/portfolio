@@ -17,7 +17,7 @@ export const Experience = () => {
             EXPERIENCE
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-normal">
-            Selected industry advisory, engineering, and academic research roles.
+            Selected engineering, academic research, and technical mentorship roles.
           </p>
         </div>
 
