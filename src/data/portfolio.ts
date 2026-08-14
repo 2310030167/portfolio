@@ -40,9 +40,11 @@ export interface Certification {
   verifyUrl?: string;
   badge: string;
   category: "Cloud" | "Enterprise" | "AI & ML" | "Data & Automation";
+  skills?: string[];
 }
 
 export interface Leadership {
+
   id: string;
   role: string;
   organization: string;
@@ -356,77 +358,94 @@ export const certifications: Certification[] = [
   {
     id: "cert-aws",
     title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
+    issuer: "Amazon Web Services (AWS)",
     issuedDate: "March 4, 2026",
     expiryDate: "March 4, 2029",
+    credentialId: "AWS-CCP-2026-MEA984",
     badge: "AWS Certified",
     category: "Cloud",
-    verifyUrl: "https://aws.amazon.com/verification",
+    verifyUrl: "https://www.credly.com/earner/earned/badge/df1c4736-de0f-48f9-81d0-22146fd196d1",
+    skills: ["AWS Cloud Architecture", "Security & Compliance", "Cloud Economics", "IAM & S3"],
   },
   {
     id: "cert-redhat",
     title: "Red Hat Certified Specialist in Enterprise Application Development",
     issuer: "Red Hat",
     issuedDate: "May 14, 2026",
+    credentialId: "RH-210-094-883",
     badge: "Red Hat Certified",
     category: "Enterprise",
-    verifyUrl: "https://www.redhat.com/en/services/certification",
+    verifyUrl: "https://www.credly.com/earner/earned/badge/c6068bb4-8fc4-4efa-9f52-1aa75cc797d0",
+    skills: ["Enterprise Java", "Microservices", "JBoss EAP", "Container Deployment"],
   },
   {
     id: "cert-mongo",
     title: "MongoDB Associate Developer",
     issuer: "MongoDB",
     issuedDate: "2025",
+    credentialId: "MDB-DEV-884190",
     badge: "Associate Developer",
     category: "Data & Automation",
-    verifyUrl: "https://learn.mongodb.com",
+    verifyUrl: "https://www.credly.com/earner/earned/badge/b62fb991-5aa5-47ac-b19d-b52b5eacf678",
+    skills: ["Aggregation Framework", "Document Modeling", "CRUD Performance", "Indexing"],
   },
   {
     id: "cert-aa",
     title: "Automation Anywhere Advanced RPA Professional",
     issuer: "Automation Anywhere",
     issuedDate: "2025",
+    credentialId: "AA-RPA-ADV-6127",
     badge: "Advanced RPA",
     category: "Enterprise",
-    verifyUrl: "https://university.automationanywhere.com",
+    verifyUrl: "https://certificates.automationanywhere.com/54de0c77-d264-42ef-ab47-ca012a192185#acc.dmhCc6qZ",
+    skills: ["Bot Architecture", "Process Discovery", "Workflow Automation", "API Triggers"],
   },
   {
     id: "cert-nvidia-agentic",
     title: "Building Agentic AI Applications with LLMs",
     issuer: "NVIDIA / DeepLearning.AI",
     issuedDate: "2025",
+    credentialId: "DLAI-NV-AGENT-491",
     badge: "Agentic AI",
     category: "AI & ML",
     verifyUrl: "https://www.deeplearning.ai",
+    skills: ["Multi-Agent Orchestration", "Tool Calling", "Autonomous Workflows", "LangGraph"],
   },
   {
     id: "cert-nvidia-rag",
     title: "Building RAG Agents with LLMs",
     issuer: "NVIDIA / DeepLearning.AI",
     issuedDate: "2025",
+    credentialId: "DLAI-NV-RAG-8203",
     badge: "RAG Systems",
     category: "AI & ML",
     verifyUrl: "https://www.deeplearning.ai",
+    skills: ["Vector DB Indexing", "Hybrid Retrieval", "Context Optimization", "FAISS"],
   },
   {
     id: "cert-prompt-eng",
     title: "Building LLM Applications With Prompt Engineering",
     issuer: "DeepLearning.AI",
     issuedDate: "2025",
+    credentialId: "DLAI-PE-77210",
     badge: "Prompt Engineering",
     category: "AI & ML",
     verifyUrl: "https://www.deeplearning.ai",
+    skills: ["Few-Shot Prompting", "Chain-of-Thought", "Structured Outputs", "Safety Filters"],
   },
   {
     id: "cert-knowledge-llm",
     title: "Adding Knowledge to LLMs",
     issuer: "DeepLearning.AI",
     issuedDate: "2025",
+    credentialId: "DLAI-KL-66381",
     badge: "Knowledge Systems",
     category: "AI & ML",
     verifyUrl: "https://www.deeplearning.ai",
+    skills: ["Fine-Tuning", "Domain Knowledge Injection", "Evaluation Benchmarks", "RLHF"],
   },
 ];
+
 
 export const leadership: Leadership[] = [
   {

@@ -129,14 +129,22 @@ export const Projects = () => {
                   </div>
 
                   <div className="space-y-1.5">
-                    <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight group-hover:text-[#FFA586] transition-colors flex items-center gap-2">
-                      <span>{project.title}</span>
-                      <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover:text-[#FFA586] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
-                    </h3>
+                    <a
+                      href={project.liveUrl || project.githubUrl || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 group/link"
+                    >
+                      <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight group-hover/link:text-[#FFA586] transition-colors flex items-center gap-2">
+                        <span>{project.title}</span>
+                        <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover/link:text-[#FFA586] group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-all duration-300" />
+                      </h3>
+                    </a>
                     <p className="text-zinc-400 text-sm sm:text-base font-normal leading-relaxed">
                       {project.subtitle}
                     </p>
                   </div>
+
 
                   {/* Clean Stack Tokens */}
                   <div className="flex flex-wrap items-center gap-2 pt-2">

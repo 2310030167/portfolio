@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { personalDetails } from "@/data/portfolio";
 import { Github, Linkedin, FileText, Menu, X } from "lucide-react";
 
@@ -21,6 +22,7 @@ export const Navbar = () => {
     { label: "Work", href: "#work" },
     { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
+    { label: "Certifications", href: "#certifications" },
     { label: "Author", href: "#author" },
     { label: "Contact", href: "#contact" },
   ];
@@ -35,12 +37,14 @@ export const Navbar = () => {
         }`}
       >
         {/* Left: Name */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="font-display font-bold text-xs sm:text-sm tracking-tight text-white hover:text-[#FFA586] transition-colors uppercase"
         >
           {personalDetails.name}
-        </a>
+        </Link>
+
+
 
         {/* Center: Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-7">
