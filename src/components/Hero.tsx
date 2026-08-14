@@ -53,13 +53,13 @@ export const Hero = () => {
           <div className="relative w-[280px] sm:w-[330px] md:w-[360px] aspect-square flex items-center justify-center">
             
             {/* Single Subtle Outer Ring with Warm Accent Glow */}
-            <div className="absolute inset-0 rounded-full border border-[#FFA586]/10" />
+            <div className="absolute inset-0 rounded-full border border-[#FFA586]/15" />
             
             {/* Subtle Inner Ring */}
             <div className="absolute inset-3 rounded-full border border-white/[0.04]" />
 
-            {/* Circular Framing Container preserving high-contrast black & white avatar */}
-            <div className="relative w-[250px] sm:w-[300px] md:w-[330px] aspect-square rounded-full p-2 bg-gradient-to-b from-[#FFA586]/20 via-[#242F49]/40 to-transparent border border-white/[0.12] shadow-2xl overflow-hidden group">
+            {/* Circular Framing Container with pure unblocked illustration */}
+            <div className="relative w-[250px] sm:w-[300px] md:w-[330px] aspect-square rounded-full p-2 bg-gradient-to-b from-[#FFA586]/20 via-[#242F49]/30 to-transparent border border-white/[0.12] shadow-2xl overflow-hidden group">
               <div className="relative w-full h-full rounded-full overflow-hidden bg-[#0a0a0f]">
                 <Image
                   src="/avatar.png"
@@ -69,38 +69,34 @@ export const Hero = () => {
                   priority
                   className="object-cover object-center grayscale contrast-110 group-hover:scale-105 transition-transform duration-700"
                 />
-                
-                {/* Subtle Vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070708]/95 via-transparent to-transparent" />
-
-                {/* Bottom Metadata */}
-                <div className="absolute bottom-5 left-0 right-0 text-center px-4">
-                  <span className="text-[10px] font-mono text-[#FFA586]/90 tracking-wider uppercase block font-medium">
-                    KL University • B.Tech CSE (AI &amp; DS)
-                  </span>
-                  <span className="text-xs font-medium text-zinc-300">
-                    Graduating May 2027
-                  </span>
-                </div>
               </div>
             </div>
 
-            {/* Author Identity Small Tag */}
+            {/* Top Author Tag */}
             <a
               href="#author"
-              className="absolute -top-2 -left-2 sm:-left-4 bg-[#0e1017]/95 backdrop-blur-md border border-[#FFA586]/25 hover:border-[#FFA586]/60 rounded-2xl px-3.5 py-2 shadow-xl flex items-center gap-2.5 transition-all duration-300 group"
+              className="absolute -top-2 -left-2 sm:-left-4 bg-[#0e1017]/95 backdrop-blur-md border border-[#FFA586]/25 hover:border-[#FFA586]/60 rounded-2xl px-3 py-1.5 sm:px-3.5 sm:py-2 shadow-xl flex items-center gap-2 sm:gap-2.5 transition-all duration-300 group z-20"
             >
-              <div className="w-7 h-7 rounded-xl bg-[#FFA586]/10 border border-[#FFA586]/20 flex items-center justify-center text-[#FFA586]">
-                <BookOpen className="w-3.5 h-3.5" />
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-[#FFA586]/10 border border-[#FFA586]/20 flex items-center justify-center text-[#FFA586]">
+                <BookOpen className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               </div>
               <div className="text-left font-mono">
-                <div className="text-[9px] text-[#FFA586]/80 uppercase tracking-widest font-semibold">Author</div>
-                <div className="text-xs font-bold text-white group-hover:text-[#FFA586] transition-colors">Ashes of Ruswell</div>
+                <div className="text-[8px] sm:text-[9px] text-[#FFA586]/80 uppercase tracking-widest font-semibold">Author</div>
+                <div className="text-[11px] sm:text-xs font-bold text-white group-hover:text-[#FFA586] transition-colors">Ashes of Ruswell</div>
               </div>
             </a>
 
+            {/* Bottom Education Pill Badge */}
+            <div className="absolute -bottom-3 sm:-bottom-2 left-1/2 -translate-x-1/2 bg-[#0e1017]/95 backdrop-blur-md border border-[#FFA586]/25 rounded-full px-3.5 sm:px-4 py-1.5 shadow-xl flex items-center gap-2 whitespace-nowrap z-20">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFA586] animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-mono text-zinc-200 font-medium tracking-wide">
+                KL University <span className="text-zinc-500">•</span> AI &amp; DS &apos;27
+              </span>
+            </div>
+
           </div>
         </div>
+
 
       </div>
     </section>
